@@ -1,5 +1,7 @@
 require "sliar/version"
 require "sliar/routing"
+require "sliar/utils"
+require "sliar/dependencies"
 require "pry"
 
 module Sliar
@@ -19,6 +21,7 @@ module Sliar
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
       text = controller.send(act)
+      return [200, {'Content-Type' => 'text/html'}, [text]]
     end
   end
 
