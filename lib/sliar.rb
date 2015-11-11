@@ -2,6 +2,7 @@ require "sliar/version"
 require "sliar/routing"
 require "sliar/utils"
 require "sliar/dependencies"
+require "sliar/controller"
 require "pry"
 
 module Sliar
@@ -25,13 +26,4 @@ module Sliar
     end
   end
 
-  class Controller
-    def initialize(env)
-      @env = env
-    end
-
-    def env
-      @env
-    end
-  end
 end
